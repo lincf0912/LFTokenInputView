@@ -1,0 +1,399 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6F7838561F8DBAA8008B2671 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7838551F8DBAA8008B2671 /* AppDelegate.m */; };
+		6F7838591F8DBAA8008B2671 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7838581F8DBAA8008B2671 /* ViewController.m */; };
+		6F78385C1F8DBAA8008B2671 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F78385A1F8DBAA8008B2671 /* Main.storyboard */; };
+		6F78385E1F8DBAA8008B2671 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F78385D1F8DBAA8008B2671 /* Assets.xcassets */; };
+		6F7838611F8DBAA8008B2671 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F78385F1F8DBAA8008B2671 /* LaunchScreen.storyboard */; };
+		6F7838641F8DBAA8008B2671 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7838631F8DBAA8008B2671 /* main.m */; };
+		6F78386D1F8DC4C7008B2671 /* LFTokenInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F78386C1F8DC4C7008B2671 /* LFTokenInputView.m */; };
+		6F7838711F8DC8A7008B2671 /* LFToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7838701F8DC8A7008B2671 /* LFToken.m */; };
+		6F7838751F8DE757008B2671 /* LFDetectingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7838741F8DE757008B2671 /* LFDetectingTextField.m */; };
+		6F7838781F8DEAF0008B2671 /* LFTokenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7838771F8DEAF0008B2671 /* LFTokenView.m */; };
+		6F78387D1F8E0537008B2671 /* LFTokenInputHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F78387C1F8E0537008B2671 /* LFTokenInputHeader.m */; };
+		6F7838811F8EFC56008B2671 /* LFTokenTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7838801F8EFC56008B2671 /* LFTokenTableView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6F7838511F8DBAA7008B2671 /* LFTokenInputView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LFTokenInputView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F7838541F8DBAA8008B2671 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6F7838551F8DBAA8008B2671 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6F7838571F8DBAA8008B2671 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6F7838581F8DBAA8008B2671 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6F78385B1F8DBAA8008B2671 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6F78385D1F8DBAA8008B2671 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6F7838601F8DBAA8008B2671 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6F7838621F8DBAA8008B2671 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F7838631F8DBAA8008B2671 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6F78386B1F8DC4C7008B2671 /* LFTokenInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFTokenInputView.h; sourceTree = "<group>"; };
+		6F78386C1F8DC4C7008B2671 /* LFTokenInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFTokenInputView.m; sourceTree = "<group>"; };
+		6F78386F1F8DC8A7008B2671 /* LFToken.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFToken.h; sourceTree = "<group>"; };
+		6F7838701F8DC8A7008B2671 /* LFToken.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFToken.m; sourceTree = "<group>"; };
+		6F7838731F8DE757008B2671 /* LFDetectingTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFDetectingTextField.h; sourceTree = "<group>"; };
+		6F7838741F8DE757008B2671 /* LFDetectingTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFDetectingTextField.m; sourceTree = "<group>"; };
+		6F7838761F8DEAF0008B2671 /* LFTokenView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFTokenView.h; sourceTree = "<group>"; };
+		6F7838771F8DEAF0008B2671 /* LFTokenView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFTokenView.m; sourceTree = "<group>"; };
+		6F78387B1F8E0537008B2671 /* LFTokenInputHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFTokenInputHeader.h; sourceTree = "<group>"; };
+		6F78387C1F8E0537008B2671 /* LFTokenInputHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFTokenInputHeader.m; sourceTree = "<group>"; };
+		6F78387E1F8E0C35008B2671 /* LFTokenInputType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFTokenInputType.h; sourceTree = "<group>"; };
+		6F78387F1F8EFC56008B2671 /* LFTokenTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LFTokenTableView.h; sourceTree = "<group>"; };
+		6F7838801F8EFC56008B2671 /* LFTokenTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LFTokenTableView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6F78384E1F8DBAA7008B2671 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6F7838481F8DBAA7008B2671 = {
+			isa = PBXGroup;
+			children = (
+				6F7838531F8DBAA7008B2671 /* LFTokenInputView */,
+				6F7838521F8DBAA7008B2671 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6F7838521F8DBAA7008B2671 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6F7838511F8DBAA7008B2671 /* LFTokenInputView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6F7838531F8DBAA7008B2671 /* LFTokenInputView */ = {
+			isa = PBXGroup;
+			children = (
+				6F78386A1F8DC429008B2671 /* class */,
+				6F7838541F8DBAA8008B2671 /* AppDelegate.h */,
+				6F7838551F8DBAA8008B2671 /* AppDelegate.m */,
+				6F7838571F8DBAA8008B2671 /* ViewController.h */,
+				6F7838581F8DBAA8008B2671 /* ViewController.m */,
+				6F78385A1F8DBAA8008B2671 /* Main.storyboard */,
+				6F78385D1F8DBAA8008B2671 /* Assets.xcassets */,
+				6F78385F1F8DBAA8008B2671 /* LaunchScreen.storyboard */,
+				6F7838621F8DBAA8008B2671 /* Info.plist */,
+				6F7838631F8DBAA8008B2671 /* main.m */,
+			);
+			path = LFTokenInputView;
+			sourceTree = "<group>";
+		};
+		6F78386A1F8DC429008B2671 /* class */ = {
+			isa = PBXGroup;
+			children = (
+				6F78386E1F8DC88E008B2671 /* model */,
+				6F7838721F8DE724008B2671 /* subView */,
+				6F7838791F8E04A4008B2671 /* define */,
+				6F78386B1F8DC4C7008B2671 /* LFTokenInputView.h */,
+				6F78386C1F8DC4C7008B2671 /* LFTokenInputView.m */,
+			);
+			path = class;
+			sourceTree = "<group>";
+		};
+		6F78386E1F8DC88E008B2671 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				6F78386F1F8DC8A7008B2671 /* LFToken.h */,
+				6F7838701F8DC8A7008B2671 /* LFToken.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		6F7838721F8DE724008B2671 /* subView */ = {
+			isa = PBXGroup;
+			children = (
+				6F7838731F8DE757008B2671 /* LFDetectingTextField.h */,
+				6F7838741F8DE757008B2671 /* LFDetectingTextField.m */,
+				6F7838761F8DEAF0008B2671 /* LFTokenView.h */,
+				6F7838771F8DEAF0008B2671 /* LFTokenView.m */,
+				6F78387F1F8EFC56008B2671 /* LFTokenTableView.h */,
+				6F7838801F8EFC56008B2671 /* LFTokenTableView.m */,
+			);
+			path = subView;
+			sourceTree = "<group>";
+		};
+		6F7838791F8E04A4008B2671 /* define */ = {
+			isa = PBXGroup;
+			children = (
+				6F78387B1F8E0537008B2671 /* LFTokenInputHeader.h */,
+				6F78387C1F8E0537008B2671 /* LFTokenInputHeader.m */,
+				6F78387E1F8E0C35008B2671 /* LFTokenInputType.h */,
+			);
+			path = define;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6F7838501F8DBAA7008B2671 /* LFTokenInputView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6F7838671F8DBAA8008B2671 /* Build configuration list for PBXNativeTarget "LFTokenInputView" */;
+			buildPhases = (
+				6F78384D1F8DBAA7008B2671 /* Sources */,
+				6F78384E1F8DBAA7008B2671 /* Frameworks */,
+				6F78384F1F8DBAA7008B2671 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LFTokenInputView;
+			productName = LFTokenInputView;
+			productReference = 6F7838511F8DBAA7008B2671 /* LFTokenInputView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6F7838491F8DBAA7008B2671 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = LamTsanFeng;
+				TargetAttributes = {
+					6F7838501F8DBAA7008B2671 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 6F78384C1F8DBAA7008B2671 /* Build configuration list for PBXProject "LFTokenInputView" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6F7838481F8DBAA7008B2671;
+			productRefGroup = 6F7838521F8DBAA7008B2671 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6F7838501F8DBAA7008B2671 /* LFTokenInputView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6F78384F1F8DBAA7008B2671 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F7838611F8DBAA8008B2671 /* LaunchScreen.storyboard in Resources */,
+				6F78385E1F8DBAA8008B2671 /* Assets.xcassets in Resources */,
+				6F78385C1F8DBAA8008B2671 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6F78384D1F8DBAA7008B2671 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F7838591F8DBAA8008B2671 /* ViewController.m in Sources */,
+				6F7838811F8EFC56008B2671 /* LFTokenTableView.m in Sources */,
+				6F7838711F8DC8A7008B2671 /* LFToken.m in Sources */,
+				6F7838641F8DBAA8008B2671 /* main.m in Sources */,
+				6F78387D1F8E0537008B2671 /* LFTokenInputHeader.m in Sources */,
+				6F7838751F8DE757008B2671 /* LFDetectingTextField.m in Sources */,
+				6F7838561F8DBAA8008B2671 /* AppDelegate.m in Sources */,
+				6F7838781F8DEAF0008B2671 /* LFTokenView.m in Sources */,
+				6F78386D1F8DC4C7008B2671 /* LFTokenInputView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6F78385A1F8DBAA8008B2671 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6F78385B1F8DBAA8008B2671 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6F78385F1F8DBAA8008B2671 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6F7838601F8DBAA8008B2671 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6F7838651F8DBAA8008B2671 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6F7838661F8DBAA8008B2671 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6F7838681F8DBAA8008B2671 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5SQZD47KTP;
+				INFOPLIST_FILE = LFTokenInputView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lincf0912.LFTokenInputView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6F7838691F8DBAA8008B2671 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5SQZD47KTP;
+				INFOPLIST_FILE = LFTokenInputView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lincf0912.LFTokenInputView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6F78384C1F8DBAA7008B2671 /* Build configuration list for PBXProject "LFTokenInputView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F7838651F8DBAA8008B2671 /* Debug */,
+				6F7838661F8DBAA8008B2671 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6F7838671F8DBAA8008B2671 /* Build configuration list for PBXNativeTarget "LFTokenInputView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F7838681F8DBAA8008B2671 /* Debug */,
+				6F7838691F8DBAA8008B2671 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6F7838491F8DBAA7008B2671 /* Project object */;
+}
