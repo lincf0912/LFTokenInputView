@@ -18,6 +18,8 @@
 @property (weak, nonatomic) id <LFTokenViewDelegate> delegate;
 
 @property(strong, nonatomic) UIFont *font;            // default is nil (system font 17 plain)
+/** 分隔符 */
+@property (readonly, copy, nonatomic) NSString *delimiter; // default is ','
 
 /** 设置选中 */
 @property (assign, nonatomic) BOOL selected;
@@ -33,6 +35,7 @@
 
 /** 初始化 */
 - (id)initWithToken:(LFToken *)token;
+- (id)initWithToken:(LFToken *)token delimiter:(NSString *)delimiter;
 
 @end
 

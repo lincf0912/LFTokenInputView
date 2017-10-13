@@ -17,14 +17,21 @@
 @property (copy, nonatomic) NSString *displayText;
 
 @property (strong, nonatomic) NSMutableDictionary *stateDict;
+
 @end
 
 @implementation LFTokenView
 
 - (id)initWithToken:(LFToken *)token
 {
+    return [self initWithToken:token delimiter:@","];
+}
+
+- (id)initWithToken:(LFToken *)token delimiter:(NSString *)delimiter
+{
     self = [super initWithFrame:CGRectZero];
     if (self) {
+        _delimiter = delimiter;
         self.backgroundColor = [UIColor clearColor];
         self.stateDict = @{}.mutableCopy;
         
@@ -42,7 +49,10 @@
         self.displayText = token.displayText;
         
         
-        NSString *labelString = [NSString stringWithFormat:LF_UNSELECTED_LABEL_FORMAT, self.displayText];
+        NSString *labelString = self.displayText;
+        if (self.delimiter) {
+            labelString = [labelString stringByAppendingString:self.delimiter];
+        }
         NSMutableAttributedString *attrString =
         [[NSMutableAttributedString alloc] initWithString:labelString
                                                attributes:@{NSFontAttributeName : self.label.font,
@@ -163,7 +173,11 @@
     if (setColor) {
         self.label.textColor = tintColor;
         
-        NSString *labelString = self.selected ? self.displayText : [NSString stringWithFormat:LF_UNSELECTED_LABEL_FORMAT, self.displayText];
+        NSString *labelString = self.displayText;
+        if (!self.selected && self.delimiter) {
+            labelString = [labelString stringByAppendingString:self.delimiter];
+        }
+        
         NSMutableAttributedString *attrString =
         [[NSMutableAttributedString alloc] initWithString:labelString
                                                attributes:@{NSFontAttributeName : self.label.font,

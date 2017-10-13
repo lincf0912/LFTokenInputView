@@ -30,6 +30,8 @@
 @property (copy, nonatomic) NSString *fieldName;
 /** 占位符 */
 @property (copy, nonatomic) NSString *placeholderText;
+/** 分隔符 */
+@property (copy, nonatomic) NSString *delimiter; // default is ','
 /** 文字颜色 */
 - (void)setTokenTitleColor:(UIColor *)color forState:(LFTokenControlState)state;
 /** 背景颜色 */

@@ -24,7 +24,6 @@ extern CGFloat const LF_FIELD_MARGIN_X; // Note: LF_PADDING_X
 extern CGFloat const LF_PADDING_X;
 extern CGFloat const LF_PADDING_Y;
 
-extern NSString * const LF_UNSELECTED_LABEL_FORMAT;
 extern NSString const * LF_TITLE_COLOR;
 extern NSString const * LF_BACKGROUND_COLOR;
 

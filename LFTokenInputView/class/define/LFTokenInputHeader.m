@@ -23,8 +23,6 @@ CGFloat const LF_FIELD_MARGIN_X = 4.0; // Note: LF_PADDING_X
 CGFloat const LF_PADDING_X = 4.0;
 CGFloat const LF_PADDING_Y = 2.0;
 
-NSString * const LF_UNSELECTED_LABEL_FORMAT = @"%@,";
-
 NSString const * LF_TITLE_COLOR = @"LF_TITLE_COLOR";
 NSString const * LF_BACKGROUND_COLOR = @"LF_BACKGROUND_COLOR";
 
