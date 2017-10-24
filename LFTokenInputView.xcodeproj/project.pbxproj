@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F1776691F9F20AF0049555B /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1776681F9F20AF0049555B /* TableViewController.m */; };
+		6F17766C1F9F22960049555B /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F17766B1F9F22960049555B /* TableViewCell.m */; };
 		6F7838561F8DBAA8008B2671 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7838551F8DBAA8008B2671 /* AppDelegate.m */; };
 		6F7838591F8DBAA8008B2671 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7838581F8DBAA8008B2671 /* ViewController.m */; };
 		6F78385C1F8DBAA8008B2671 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F78385A1F8DBAA8008B2671 /* Main.storyboard */; };
@@ -22,6 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F1776671F9F20AF0049555B /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		6F1776681F9F20AF0049555B /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		6F17766A1F9F22960049555B /* TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		6F17766B1F9F22960049555B /* TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		6F7838511F8DBAA7008B2671 /* LFTokenInputView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LFTokenInputView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F7838541F8DBAA8008B2671 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6F7838551F8DBAA8008B2671 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -82,6 +88,10 @@
 				6F7838551F8DBAA8008B2671 /* AppDelegate.m */,
 				6F7838571F8DBAA8008B2671 /* ViewController.h */,
 				6F7838581F8DBAA8008B2671 /* ViewController.m */,
+				6F1776671F9F20AF0049555B /* TableViewController.h */,
+				6F1776681F9F20AF0049555B /* TableViewController.m */,
+				6F17766A1F9F22960049555B /* TableViewCell.h */,
+				6F17766B1F9F22960049555B /* TableViewCell.m */,
 				6F78385A1F8DBAA8008B2671 /* Main.storyboard */,
 				6F78385D1F8DBAA8008B2671 /* Assets.xcassets */,
 				6F78385F1F8DBAA8008B2671 /* LaunchScreen.storyboard */,
@@ -209,11 +219,13 @@
 				6F7838591F8DBAA8008B2671 /* ViewController.m in Sources */,
 				6F7838811F8EFC56008B2671 /* LFTokenTableView.m in Sources */,
 				6F7838711F8DC8A7008B2671 /* LFToken.m in Sources */,
+				6F1776691F9F20AF0049555B /* TableViewController.m in Sources */,
 				6F7838641F8DBAA8008B2671 /* main.m in Sources */,
 				6F78387D1F8E0537008B2671 /* LFTokenInputHeader.m in Sources */,
 				6F7838751F8DE757008B2671 /* LFDetectingTextField.m in Sources */,
 				6F7838561F8DBAA8008B2671 /* AppDelegate.m in Sources */,
 				6F7838781F8DEAF0008B2671 /* LFTokenView.m in Sources */,
+				6F17766C1F9F22960049555B /* TableViewCell.m in Sources */,
 				6F78386D1F8DC4C7008B2671 /* LFTokenInputView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
