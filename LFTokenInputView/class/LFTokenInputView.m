@@ -74,6 +74,7 @@
 {
     self.backgroundColor = [UIColor clearColor];
     self.additionalTextFieldYOffset = 1.f;
+    self.delimiter = @",";
     self.stateDict = [NSMutableDictionary dictionaryWithCapacity:4];
     self.tokens = [NSMutableArray arrayWithCapacity:20];
     self.tokenViews = [NSMutableArray arrayWithCapacity:20];
@@ -201,7 +202,8 @@
     /** 列表位置 */
     if (self.tableView) {
         /** 输入框以下的部分 */
-        self.tableView.frame = CGRectMake(0, CGRectGetMaxY(self.frame), CGRectGetWidth(self.frame), [UIScreen mainScreen].bounds.size.height - CGRectGetMaxY(self.frame) - self.keyboardHeight);
+        CGRect inScreenRect = [self.superview convertRect:self.frame toView:nil];
+        self.tableView.frame = CGRectMake(0, CGRectGetMaxY(inScreenRect), CGRectGetWidth(inScreenRect), [UIScreen mainScreen].bounds.size.height - CGRectGetMaxY(inScreenRect) - self.keyboardHeight);
     }
     
     if (oldContentHeight != self.intrinsicContentHeight) {
@@ -337,6 +339,7 @@
     _accessoryView = accessoryView;
     [_accessoryView sizeToFit];
     if (_accessoryView != nil) {
+        _accessoryView.hidden = YES;
         [self addSubview:_accessoryView];
     }
     [self repositionViews];
@@ -459,7 +462,7 @@
     }
     
     [self.tokens addObject:token];
-    LFTokenView *tokenView = [[LFTokenView alloc] initWithToken:token];
+    LFTokenView *tokenView = [[LFTokenView alloc] initWithToken:token delimiter:self.delimiter];
     tokenView.font = self.font;
     tokenView.delegate = self;
     
@@ -542,6 +545,19 @@
             [self textFieldDidChange:self.textField];
         }
     }
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    self.accessoryView.hidden = NO;
+    return YES;
+}
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+    self.accessoryView.hidden = YES;
+    return YES;
 }
 
 #pragma mark - Text Field Changes
@@ -635,7 +651,8 @@
     int height = keyboardRect.size.height;
     self.keyboardHeight = height;
     
-    self.tableView.frame = CGRectMake(0, CGRectGetMaxY(self.frame), CGRectGetWidth(self.frame), [UIScreen mainScreen].bounds.size.height - CGRectGetMaxY(self.frame) - self.keyboardHeight);
+    CGRect inScreenRect = [self.superview convertRect:self.frame toView:nil];
+    self.tableView.frame = CGRectMake(0, CGRectGetMaxY(inScreenRect), CGRectGetWidth(inScreenRect), [UIScreen mainScreen].bounds.size.height - CGRectGetMaxY(inScreenRect) - self.keyboardHeight);
 }
 
 @end
