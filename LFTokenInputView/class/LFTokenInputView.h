@@ -60,6 +60,9 @@
 - (void)addToken:(LFToken *)token;
 - (void)removeToken:(LFToken *)token;
 
+/* 取消所选 */
+- (void)unselectAllTokenViewsAnimated:(BOOL)animated;
+
 /** 激活编辑 */
 - (void)beginEditing;
 /** 放弃编辑 */
