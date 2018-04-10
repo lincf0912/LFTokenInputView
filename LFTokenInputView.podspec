@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name         = 'LFTokenInputView'
-s.version      = '1.0.1'
+s.version      = '1.0.2'
 s.summary      = 'iOS\'s native contact bubbles UI, it look like email input view'
 s.homepage     = 'https://github.com/lincf0912/LFTokenInputView'
 s.license      = 'MIT'
