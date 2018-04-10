@@ -31,6 +31,7 @@
 {
     self = [super initWithFrame:CGRectZero];
     if (self) {
+        _token = token;
         _delimiter = delimiter;
         self.backgroundColor = [UIColor clearColor];
         self.stateDict = @{}.mutableCopy;

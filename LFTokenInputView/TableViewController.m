@@ -11,7 +11,7 @@
 
 static NSString *const cellIdentifier = @"CellIdentifier";
 
-@interface TableViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface TableViewController () <UITableViewDelegate, UITableViewDataSource, TableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -26,6 +26,7 @@ static NSString *const cellIdentifier = @"CellIdentifier";
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,7 +44,7 @@ static NSString *const cellIdentifier = @"CellIdentifier";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-
+    cell.tokenInputDelegate = self;
     
     
     return cell;
@@ -51,7 +52,19 @@ static NSString *const cellIdentifier = @"CellIdentifier";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    TableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    if (cell) {
+        return [cell intrinsicContentSize].height;
+    }
     return 44.f;
+}
+
+#pragma mark - TableViewCellDelegate
+
+- (void)didChangeHeightTo:(CGFloat)height
+{
+    [self.tableView beginUpdates];
+    [self.tableView endUpdates];
 }
 
 /*

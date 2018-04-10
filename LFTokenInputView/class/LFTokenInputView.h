@@ -53,7 +53,7 @@
 @property (assign, nonatomic) IBInspectable BOOL drawBottomBorder;
 
 /** 当前所有对象 */
-@property (readonly, nonatomic) NSArray <LFToken *>*allTokens;
+@property (strong, nonatomic) NSArray <LFToken *>*allTokens;
 /** 是否编辑状态 */
 @property (readonly, nonatomic, getter = isEditing) BOOL editing;
 

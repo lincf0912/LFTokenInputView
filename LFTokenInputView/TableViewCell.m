@@ -11,6 +11,8 @@
 
 @interface TableViewCell () <LFTokenInputViewDelegate, LFTokenInputViewDataSource>
 
+@property (nonatomic, weak) LFTokenInputView *tokenInputView;
+
 @end
 
 @implementation TableViewCell
@@ -30,13 +32,27 @@
     tokenInputView.delegate = self;
     tokenInputView.dataSource = self;
     
+    tokenInputView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
     [self.contentView addSubview:tokenInputView];
+    _tokenInputView = tokenInputView;
+}
+
+- (void)prepareForReuse
+{
+    [super prepareForReuse];
+    _tokenInputView.allTokens = nil;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (CGSize)intrinsicContentSize
+{
+    return [_tokenInputView intrinsicContentSize];
 }
 
 - (void)onAccessoryContactAddButtonTapped:(UIButton *)sender
@@ -63,6 +79,13 @@
         [datas addObject:token];
     }
     return [datas copy];
+}
+
+- (void)tokenInputView:(LFTokenInputView *)view didChangeHeightTo:(CGFloat)height
+{
+    if ([self.tokenInputDelegate respondsToSelector:@selector(didChangeHeightTo:)]) {
+        [self.tokenInputDelegate didChangeHeightTo:height];
+    }
 }
 
 @end

@@ -62,6 +62,7 @@
 {
     if (self.tableView) {
         [[NSNotificationCenter defaultCenter] removeObserver:self];
+        self.tableView.filterKey = nil;
     }
 }
 
@@ -457,8 +458,16 @@
 
 - (void)addToken:(LFToken *)token
 {
+    BOOL ok = [self __addToken:token];
+    if (ok) {
+        [self __updateContain];
+    }
+}
+
+- (BOOL)__addToken:(LFToken *)token
+{
     if ([self.tokens containsObject:token]) {
-        return;
+        return NO;
     }
     
     [self.tokens addObject:token];
@@ -481,31 +490,26 @@
     tokenView.frame = CGRectMake(0, 0, intrinsicSize.width, intrinsicSize.height);
     [self.tokenViews addObject:tokenView];
     [self addSubview:tokenView];
-    self.textField.text = @"";
     if ([self.delegate respondsToSelector:@selector(tokenInputView:didAddToken:)]) {
         [self.delegate tokenInputView:self didAddToken:token];
     }
     
-    // Clearing text programmatically doesn't call this automatically
-    [self textFieldDidChange:self.textField];
-    
-    [self updatePlaceholderTextVisibility];
-    [self repositionViews];
+    return YES;
 }
 
 - (void)removeToken:(LFToken *)token
 {
-    NSInteger index = [self.tokens indexOfObject:token];
-    if (index == NSNotFound) {
-        return;
+    BOOL ok = [self __removeToken:token];
+    if (ok) {
+        [self __updateContain];
     }
-    [self removeTokenAtIndex:index];
 }
 
-- (void)removeTokenAtIndex:(NSInteger)index
+- (BOOL)__removeToken:(LFToken *)token
 {
+    NSInteger index = [self.tokens indexOfObject:token];
     if (index == NSNotFound) {
-        return;
+        return NO;
     }
     LFTokenView *tokenView = self.tokenViews[index];
     [tokenView removeFromSuperview];
@@ -515,6 +519,15 @@
     if ([self.delegate respondsToSelector:@selector(tokenInputView:didRemoveToken:)]) {
         [self.delegate tokenInputView:self didRemoveToken:removedToken];
     }
+    return YES;
+}
+
+- (void)__updateContain
+{
+    // Clearing text programmatically doesn't call this automatically
+    self.textField.text = @"";
+    [self textFieldDidChange:self.textField];
+    
     [self updatePlaceholderTextVisibility];
     [self repositionViews];
 }
@@ -522,6 +535,20 @@
 - (NSArray *)allTokens
 {
     return [self.tokens copy];
+}
+
+- (void)setAllTokens:(NSArray<LFToken *> *)allTokens
+{
+    NSArray *tokens = [self allTokens];
+    for (LFToken *token in tokens) {
+        [self __removeToken:token];
+    }
+    
+    for (LFToken *token in allTokens) {
+        [self __addToken:token];
+    }
+    
+    [self __updateContain];
 }
 
 - (void)tokenizeTextfieldText
@@ -556,6 +583,7 @@
 }
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {
+    self.tableView.filterKey = nil;
     self.accessoryView.hidden = YES;
     return YES;
 }
@@ -603,11 +631,7 @@
         [self textFieldDidChange:self.textField];
     }
     // 删除对象
-    NSInteger index = [self.tokenViews indexOfObject:tokenView];
-    if (index == NSNotFound) {
-        return;
-    }
-    [self removeTokenAtIndex:index];
+    [self removeToken:tokenView.token];
 }
 
 - (void)tokenViewDidSelected:(LFTokenView *)tokenView

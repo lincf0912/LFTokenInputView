@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+
+@protocol TableViewCellDelegate <NSObject>
+
+- (void)didChangeHeightTo:(CGFloat)height;
+
+@end
+
 @interface TableViewCell : UITableViewCell
+
+@property (nonatomic, weak) id<TableViewCellDelegate> tokenInputDelegate;
 
 @end

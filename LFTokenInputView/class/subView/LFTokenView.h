@@ -14,6 +14,8 @@
 
 @interface LFTokenView : UIView <UIKeyInput>
 
+@property (readonly, nonatomic) LFToken *token;
+
 /** 代理 */
 @property (weak, nonatomic) id <LFTokenViewDelegate> delegate;
 
