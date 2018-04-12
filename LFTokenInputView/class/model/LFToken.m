@@ -30,8 +30,10 @@
     }
     
     LFToken *otherObject = (LFToken *)object;
-    if ([otherObject.displayText isEqualToString:self.displayText] &&
-        ([otherObject.context isEqual:self.context] || otherObject.context == self.context)) {
+    if (otherObject.context || self.context) {
+        return [otherObject.context isEqual:self.context] || (otherObject.context == self.context);
+    }
+    if ([otherObject.displayText isEqualToString:self.displayText]) {
         return YES;
     }
     return NO;
