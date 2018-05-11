@@ -73,6 +73,11 @@
 @protocol LFTokenInputViewDelegate <NSObject>
 
 @optional
+
+/**
+ * token选中情况下被点击
+ */
+- (void)tokenInputView:(LFTokenInputView *)view didSelectedToken:(LFToken *)token;
 /**
  * 当文本域文本被改变时调用
  */

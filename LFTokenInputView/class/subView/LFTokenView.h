@@ -24,7 +24,7 @@
 @property (readonly, copy, nonatomic) NSString *delimiter; // default is ','
 
 /** 设置选中 */
-@property (assign, nonatomic) BOOL selected;
+@property (getter=isSelected, nonatomic) BOOL selected;
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated;
 
 /** 文字颜色 */

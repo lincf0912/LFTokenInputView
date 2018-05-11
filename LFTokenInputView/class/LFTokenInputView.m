@@ -426,7 +426,6 @@
 - (void)beginEditing
 {
     [self.textField becomeFirstResponder];
-    [self unselectAllTokenViewsAnimated:NO];
 }
 
 
@@ -583,6 +582,9 @@
 }
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {
+    if (textField.text.length) {
+        [self tokenizeTextfieldText];
+    }
     self.tableView.filterKey = nil;
     self.accessoryView.hidden = YES;
     return YES;
@@ -636,6 +638,11 @@
 
 - (void)tokenViewDidSelected:(LFTokenView *)tokenView
 {
+    if (tokenView.selected) {
+        if ([self.delegate respondsToSelector:@selector(tokenInputView:didSelectedToken:)]) {
+            [self.delegate tokenInputView:self didSelectedToken:tokenView.token];
+        }
+    }
     [self selectTokenView:tokenView animated:YES];
 }
 
@@ -644,7 +651,7 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    [self unselectAllTokenViewsAnimated:YES];
+
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField

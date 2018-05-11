@@ -22,6 +22,8 @@
 
 @implementation LFTokenView
 
+@synthesize selected = _selected;
+
 - (id)initWithToken:(LFToken *)token
 {
     return [self initWithToken:token delimiter:@","];
@@ -75,6 +77,12 @@
     return self;
 }
 
+- (BOOL)resignFirstResponder
+{
+    [self setSelected:NO animated:YES];
+    return [super resignFirstResponder];    
+}
+
 - (CGSize)intrinsicContentSize
 {
     CGSize labelIntrinsicSize = self.label.intrinsicContentSize;
@@ -111,12 +119,22 @@
     [self.delegate tokenViewDidSelected:self];
 }
 
-#pragma mark - setter
+- (void)editingDidEnd
+{
+    
+}
+
+#pragma mark - setter/getter
 
 - (void)setFont:(UIFont *)font
 {
     _font = font;
     self.label.font = font;
+}
+
+- (BOOL)isSelected
+{
+    return _selected;
 }
 
 - (void)setSelected:(BOOL)selected
