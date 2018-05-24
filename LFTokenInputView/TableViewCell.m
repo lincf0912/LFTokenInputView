@@ -88,4 +88,14 @@
     }
 }
 
+- (void)tokenInputViewShouldBeginEditing:(LFTokenInputView *)view
+{
+    NSLog(@"beginEditing");
+}
+
+- (void)tokenInputViewShouldEndEditing:(LFTokenInputView *)view
+{
+    NSLog(@"endEditing");
+}
+
 @end

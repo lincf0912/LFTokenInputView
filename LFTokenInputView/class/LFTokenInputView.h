@@ -99,6 +99,10 @@
  */
 - (void)tokenInputView:(LFTokenInputView *)view didChangeHeightTo:(CGFloat)height;
 
+- (void)tokenInputViewShouldBeginEditing:(LFTokenInputView *)view;
+
+- (void)tokenInputViewShouldEndEditing:(LFTokenInputView *)view;
+
 @end
 
 @protocol LFTokenInputViewDataSource <NSObject>

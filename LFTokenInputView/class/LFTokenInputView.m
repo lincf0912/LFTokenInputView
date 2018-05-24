@@ -578,6 +578,9 @@
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
     self.accessoryView.hidden = NO;
+    if ([self.delegate respondsToSelector:@selector(tokenInputViewShouldBeginEditing:)]) {
+        [self.delegate tokenInputViewShouldBeginEditing:self];
+    }
     return YES;
 }
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField
@@ -587,6 +590,9 @@
     }
     self.tableView.filterKey = nil;
     self.accessoryView.hidden = YES;
+    if ([self.delegate respondsToSelector:@selector(tokenInputViewShouldEndEditing:)]) {
+        [self.delegate tokenInputViewShouldEndEditing:self];
+    }
     return YES;
 }
 
