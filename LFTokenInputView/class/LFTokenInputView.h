@@ -98,10 +98,18 @@
  * 当视图更新了自己的高度。如果你是不使用自动布局，你应该使用这方法来更新
  */
 - (void)tokenInputView:(LFTokenInputView *)view didChangeHeightTo:(CGFloat)height;
-
+/**
+ * 开始编辑
+ */
 - (void)tokenInputViewShouldBeginEditing:(LFTokenInputView *)view;
-
+/**
+ * 结束编辑
+ */
 - (void)tokenInputViewShouldEndEditing:(LFTokenInputView *)view;
+/**
+ * 编辑的字符，返回NO则忽略该字符的输入。
+ */
+- (BOOL)tokenInputView:(LFTokenInputView *)view shouldChangeString:(NSString *)string;
 
 @end
 

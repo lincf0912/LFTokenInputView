@@ -677,6 +677,13 @@
     return YES;
 }
 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if ([self.delegate respondsToSelector:@selector(tokenInputView:shouldChangeString:)]) {
+        return [self.delegate tokenInputView:self shouldChangeString:string];
+    }
+    return YES;
+}
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
