@@ -79,8 +79,9 @@
 
 - (BOOL)resignFirstResponder
 {
-    [self setSelected:NO animated:YES];
-    return [super resignFirstResponder];    
+    BOOL isResign = [super resignFirstResponder];
+    [self.delegate tokenViewDidUnselected:self];
+    return isResign;
 }
 
 - (CGSize)intrinsicContentSize

@@ -46,5 +46,5 @@
 @required
 - (void)tokenViewDidDeleted:(LFTokenView *)tokenView replaceWithText:(NSString *)replacementText;
 - (void)tokenViewDidSelected:(LFTokenView *)tokenView;
-
+- (void)tokenViewDidUnselected:(LFTokenView *)tokenView;
 @end

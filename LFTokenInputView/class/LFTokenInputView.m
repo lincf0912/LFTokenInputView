@@ -20,6 +20,8 @@
 @property (strong, nonatomic) NSMutableArray <LFToken *>*tokens;
 @property (strong, nonatomic) NSMutableArray <LFTokenView *>*tokenViews;
 
+@property (weak, nonatomic) LFTokenView *selectedTokenView;
+
 @property (strong, nonatomic) LFDetectingTextField *textField;
 @property (strong, nonatomic) UILabel *fieldLabel;
 @property (strong, nonatomic) LFTokenTableView *tableView;
@@ -29,6 +31,11 @@
 @property (assign, nonatomic) CGFloat keyboardHeight;
 
 @property (strong, nonatomic) NSMutableDictionary *stateDict;
+
+/**
+ 系统API回调不够及时。
+ */
+@property (assign, nonatomic) BOOL textFieldEditing;
 
 @end
 
@@ -432,6 +439,7 @@
 - (void)endEditing
 {
     [self.textField resignFirstResponder];
+    [_selectedTokenView resignFirstResponder];
 }
 
 #pragma mark - Token selection
@@ -444,6 +452,8 @@
             [otherTokenView setSelected:NO animated:animated];
         }
     }
+    _selectedTokenView = tokenView;
+    self.accessoryView.hidden = NO;
 }
 
 - (void)unselectAllTokenViewsAnimated:(BOOL)animated
@@ -451,6 +461,8 @@
     for (LFTokenView *tokenView in self.tokenViews) {
         [tokenView setSelected:NO animated:animated];
     }
+    _selectedTokenView = nil;
+    [self.textField becomeFirstResponder];
 }
 
 #pragma mark - Adding / Removing Tokens
@@ -573,29 +585,6 @@
     }
 }
 
-#pragma mark - UITextFieldDelegate
-
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
-{
-    self.accessoryView.hidden = NO;
-    if ([self.delegate respondsToSelector:@selector(tokenInputViewShouldBeginEditing:)]) {
-        [self.delegate tokenInputViewShouldBeginEditing:self];
-    }
-    return YES;
-}
-- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
-{
-    if (textField.text.length) {
-        [self tokenizeTextfieldText];
-    }
-    self.tableView.filterKey = nil;
-    self.accessoryView.hidden = YES;
-    if ([self.delegate respondsToSelector:@selector(tokenInputViewShouldEndEditing:)]) {
-        [self.delegate tokenInputViewShouldEndEditing:self];
-    }
-    return YES;
-}
-
 #pragma mark - Text Field Changes
 
 - (void)textFieldDidChange:(id)sender
@@ -652,8 +641,42 @@
     [self selectTokenView:tokenView animated:YES];
 }
 
+- (void)tokenViewDidUnselected:(LFTokenView *)tokenView
+{
+    [tokenView setSelected:NO animated:YES];
+    _selectedTokenView = nil;
+    if (!self.textFieldEditing) {
+        self.accessoryView.hidden = YES;
+    }
+}
+
 
 #pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    self.textFieldEditing = YES;
+    self.accessoryView.hidden = NO;
+    if ([self.delegate respondsToSelector:@selector(tokenInputViewShouldBeginEditing:)]) {
+        [self.delegate tokenInputViewShouldBeginEditing:self];
+    }
+    return YES;
+}
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+    self.textFieldEditing = NO;
+    if (textField.text.length) {
+        [self tokenizeTextfieldText];
+    }
+    self.tableView.filterKey = nil;
+    if (!self.selectedTokenView.isSelected) {
+        self.accessoryView.hidden = YES;
+    }
+    if ([self.delegate respondsToSelector:@selector(tokenInputViewShouldEndEditing:)]) {
+        [self.delegate tokenInputViewShouldEndEditing:self];
+    }
+    return YES;
+}
+
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
