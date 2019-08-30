@@ -75,7 +75,7 @@
 {
     NSMutableArray *datas = @[].mutableCopy;
     for (NSInteger i = 0 ; i < 30; i++) {
-        LFToken *token = [[LFToken alloc] initWithDisplayText:[NSString stringWithFormat:@"Jack_%d", (int)i] context:@"abc"];
+        LFToken *token = [[LFToken alloc] initWithDisplayText:[NSString stringWithFormat:@"Jack_%d", (int)i] context:[NSString stringWithFormat:@"ABC_%d", (int)i]];
         [datas addObject:token];
     }
     return [datas copy];
